@@ -1,0 +1,33 @@
+step 1: install google appengier laucher
+https://google-app-engine.en.lo4d.com/download
+
+Steps for Practical No. 2
+(After installing GUI Launcher and Python 2.5)
+
+Step 1:
+Open GUI Launcher → Edit → Preferences → select the Python.exe file.
+Click on Browse → go to Local Disk (C:) → open the Python25 folder → select python.exe (not pythonw.exe).
+
+In some cases, this file may be located in Program Files or Program Files (x86) on Local Disk (C:).
+
+Step 2:
+Select the path for Google App Engine.
+Click on Browse → Local Disk (C:) → Program Files (x86) → Google → google-app-engine → select the folder and click OK.
+Leave the other two fields empty.
+
+Step 3:
+Minimize the application.
+Create a blank folder on the Desktop and rename it (for example: App).
+
+Step 4:
+Go back to the application → click on File → Create New Application.
+An engine app name will appear. In the second field, select the path of the folder created on the Desktop.
+A port number (e.g., 8080) will be displayed.
+
+Step 5:
+The app will be created. Select it with a single click → go to Run.
+A command (black) screen will open—minimize it.
+Open Chrome → search for localhost:8080 → the output “Hello World” will be displayed.
+
+Step 6 (Optional):
+Open the folder created on the Desktop. All application files will be available there.

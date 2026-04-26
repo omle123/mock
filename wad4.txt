@@ -1,0 +1,36 @@
+🐳 WHAT IS DOCKER (1 line for viva)
+
+👉 “Docker is a platform to create and run applications inside containers.”
+💻 STEP 1: INSTALL DOCKER (Ubuntu 22.04)
+
+Run in terminal:
+sudo apt update
+sudo apt install docker.io -y
+
+Start Docker:
+sudo systemctl start docker
+sudo systemctl enable docker
+
+Check version:
+docker --version
+
+RUN FIRST CONTAINER
+sudo docker run hello-world
+👉 This downloads and runs a test container
+👉 You will see: “Hello from Docker!”
+
+RUN WEB SERVER CONTAINER (IMPORTANT)
+sudo docker run -d -p 8080:80 nginx
+👉 What this does:
+Runs container in background (-d)
+Maps port 8080 → 80
+Uses Nginx image
+
+pen browser in Ubuntu:
+http://localhost:8080
+👉 You will see Nginx welcome page
+
+STEP 4: CHECK RUNNING CONTAINERS
+sudo docker ps
+🛑 STEP 5: STOP CONTAINER
+sudo docker stop <container_id>

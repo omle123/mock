@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data</title>
+</head>
+<body>
+    <h2>Registered Users</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Email
+                </th>
+            </tr>
+        </thead>
+        <tbody id="data"></tbody>
+    </table>
+
+    <script>
+        let users=JSON.parse(localStorage.getItem("users"))||[];
+        let table=document.getElementById("data");
+        users.forEach(user => {
+        let row=`<tr>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+        </tr>`;
+        table.innerHTML += row;
+     });
+    </script>
+
+</body>
+</html>

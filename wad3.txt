@@ -1,0 +1,40 @@
+1. CREATE GITHUB ACCOUNT
+
+Go to 👉 GitHub
+
+Sign up (email + password)
+Verify accoun
+
+3. CREATE REPOSITORY ON GITHUB
+
+On GitHub:
+
+Click ➕ → New Repository
+Name: my-first-app
+Click Create Repository
+
+Go to folder
+cd Desktop
+mkdir myapp
+cd myapp
+
+
+nitialize Git
+git init
+👉 Creates a local repository
+
+Step 3: Add file
+git add .
+👉 Adds all files to staging
+
+: Commit
+git commit -m "First commit"
+👉 Saves snapshot
+
+Connect to GitHub
+Copy repo URL from GitHub (example):
+git remote add origin https://github.com/yourname/my-first-app.git
+
+git branch -M main
+git push -u origin main
+👉 Your code is now on GitHub 🎉

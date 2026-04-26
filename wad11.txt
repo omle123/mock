@@ -1,0 +1,57 @@
+Create EC 2 instance on AWS environment and setup the Apache
+webserver.
+
+
+STEP 1: LOGIN TO AWS
+
+👉 Go to Amazon Web Services
+👉 Sign in
+
+🖥️ STEP 2: CREATE EC2 INSTANCE
+
+👉 Go to:
+Amazon EC2
+
+Do this:
+Click Launch Instance
+Name → my-server
+OS → Ubuntu 22.04
+Instance type → t2.micro (free tier)
+Key pair → Create or select
+Network → Allow HTTP + SSH
+Click Launch
+🔑 STEP 3: CONNECT TO INSTANCE
+
+👉 Select instance → Click Connect
+
+Use SSH:
+
+ssh -i yourkey.pem ubuntu@your-public-ip
+🌍 STEP 4: INSTALL APACHE SERVER
+
+Run inside EC2:
+
+sudo apt update
+sudo apt install apache2 -y
+▶️ STEP 5: START APACHE
+sudo systemctl start apache2
+sudo systemctl enable apache2
+🌐 STEP 6: OPEN IN BROWSER
+
+👉 Copy Public IP
+
+Open:
+
+http://your-public-ip
+
+👉 You will see:
+Apache default page 🎉
+
+✏️ STEP 7: EDIT WEB PAGE (OPTIONAL BONUS)
+sudo nano /var/www/html/index.html
+
+Change to:
+
+<h1>Hello from EC2</h1>
+
+Save → refresh browser

@@ -1,0 +1,29 @@
+for commutnition import step 
+One more setting we need to give – select VM1 – Go to setting – click on network –
+select Bridge network rather than NAT network – click on OK.
+Same setting need to do for VM2.
+
+step1 start VM1
+use 
+ls 
+cat - shwo the contet inside the fle 
+scp - which will help to compyt file frin one vm to tiehrt
+touch it makes a new file 
+nano open editro terminal
+
+
+step 2 on VM1
+    touch sample.txt
+    nano sample.txt
+
+
+now got to VM2
+step 3 n VM2
+    use ifconfig
+
+step 4 note the ipaddres of VM2
+and go back to VM1 and use 
+scp sample.text vagrant@10.1.6.250:/home/vagrant
+
+and got to vm2 and use 
+ls 

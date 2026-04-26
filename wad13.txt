@@ -1,0 +1,66 @@
+
+Design and develop custom Application using Salesforce Cloud.
+
+
+
+
+🌐 STEP 1: CREATE ACCOUNT
+
+Go to 👉 Salesforce
+👉 Click Sign Up (Developer Account)
+👉 Login
+
+🧱 STEP 2: CREATE CUSTOM APP
+Click ⚙️ (Setup)
+Search → App Manager
+Click → New Lightning App
+Name → StudentApp
+Next → Next → Save
+📦 STEP 3: CREATE CUSTOM OBJECT
+In Setup → Search Object Manager
+Click → Create → Custom Object
+
+Fill:
+
+Label → Student
+Object Name → Student
+
+👉 Click Save
+
+🧾 STEP 4: ADD FIELDS
+
+Inside Student Object → Fields & Relationships
+
+Add:
+
+🔹 Field 1
+Name → Student Name
+Type → Text
+🔹 Field 2
+Name → Email
+Type → Email
+🔹 Field 3
+Name → Age
+Type → Number
+🧩 STEP 5: ADD OBJECT TO APP
+Go to App Manager
+Edit StudentApp
+Add Student Object
+Save
+📝 STEP 6: INSERT DATA
+Open your App
+Click Student Tab
+Click New
+
+Enter:
+
+Name
+Email
+Age
+
+👉 Save
+
+📊 STEP 7: VIEW RECORDS
+
+👉 Click Student → List View
+👉 You will see stored data
