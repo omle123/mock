@@ -1,0 +1,219 @@
+# Deploy Node.js Website on AWS EC2 in Windows (Without PuTTY)
+
+You can do everything using only:
+
+* Command Prompt / PowerShell
+* OpenSSH (already built into Windows 10/11)
+
+---
+
+# STEP 1: Create Node.js Project
+
+## Create Folder
+
+```cmd id="0u3jlwm"
+mkdir mywebsite
+cd mywebsite
+```
+
+---
+
+## Initialize Project
+
+```cmd id="fs72yq"
+npm init -y
+```
+
+---
+
+## Install Express
+
+```cmd id="9p6lkk"
+npm install express
+```
+
+---
+
+## Create `server.js`
+
+```javascript id="4rvjlwm"
+const express = require('express');
+
+const app = express();
+
+app.use(express.static('public'));
+
+app.listen(3000, () => {
+    console.log('Server running on port 3000');
+});
+```
+
+---
+
+## Create Public Folder
+
+```cmd id="bhm0bq"
+mkdir public
+```
+
+Create `index.html` inside public:
+
+```html id="jlwm4g"
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+</head>
+<body>
+    <h1>Hello AWS 🚀</h1>
+</body>
+</html>
+```
+
+---
+
+# STEP 2: Run Locally
+
+```cmd id="p1u97q"
+node server.js
+```
+
+Open:
+
+```text id="jlwmqq"
+http://localhost:3000
+```
+
+---
+
+# STEP 3: Create AWS EC2
+
+Go to:
+
+[AWS EC2 Console](https://console.aws.amazon.com/ec2/?utm_source=chatgpt.com)
+
+Create:
+
+* Ubuntu instance
+* t2.micro
+* Allow:
+
+  * SSH (22)
+  * Custom TCP (3000)
+
+Download:
+
+```text id="nlxjlwm"
+test.pem
+```
+
+Move `test.pem` to:
+
+```text id="pkhjlwm"
+C:\Users\YOURNAME\Downloads
+```
+
+---
+
+# STEP 4: Open PowerShell
+
+Go to Downloads folder:
+
+```powershell id="jlwm4y"
+cd Downloads
+```
+
+---
+
+# STEP 5: Connect to EC2
+
+Run:
+
+```powershell id="jlwm5z"
+ssh -i test.pem ubuntu@YOUR-PUBLIC-IP
+```
+
+Example:
+
+```powershell id="jlwm7n"
+ssh -i test.pem ubuntu@13.62.105.62
+```
+
+Type:
+
+```text id="jlwm6u"
+yes
+```
+
+Now EC2 terminal opens 🎉
+
+---
+
+# STEP 6: Install Node.js in EC2
+
+Inside EC2:
+
+```bash id="jlwm9o"
+sudo apt update
+sudo apt install nodejs npm -y
+```
+
+---
+
+# STEP 7: Upload Project from Windows to EC2
+
+Open NEW PowerShell window.
+
+Go where your project exists:
+
+```powershell id="8r1jlwm"
+cd path\to\mywebsite
+```
+
+Example:
+
+```powershell id="jlwm8w"
+cd Desktop
+```
+
+Upload project:
+
+```powershell id="jlwm2e"
+scp -i C:\Users\YOURNAME\Downloads\test.pem -r mywebsite ubuntu@YOUR-PUBLIC-IP:/home/ubuntu/
+```
+
+Example:
+
+```powershell id="jlwm0f"
+scp -i C:\Users\Abhishek\Downloads\test.pem -r mywebsite ubuntu@13.62.105.62:/home/ubuntu/
+```
+
+---
+
+# STEP 8: Run Project on EC2
+
+Go back to EC2 terminal:
+
+```bash id="jlwm3s"
+cd mywebsite
+npm install
+node server.js
+```
+
+---
+
+# STEP 9: Open Website
+
+Browser:
+
+```text id="jlwm1t"
+http://YOUR-PUBLIC-IP:3000
+```
+
+Example:
+
+```text id="jlwm5m"
+http://13.62.105.62:3000
+```
+
+Your website is LIVE on AWS 🚀
