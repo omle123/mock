@@ -1,14 +1,53 @@
-STEP 1: INSTALL REQUIREMENTS
-Install Node.js
-sudo apt update
-sudo apt install nodejs npm -y
-Install MongoDB
+STEP 1: Install Requirements on Windows
+1. Install Node.js
 
-STEP 2: CREATE PROJECT
+Download from:
+
+Node.js Official Website
+
+Install the LTS version
+Keep all settings default
+After installation, open Command Prompt and check:
+node -v
+npm -v
+2. Install MongoDB
+
+Download MongoDB Community Server:
+
+MongoDB Community Server
+
+During installation:
+
+Select Complete
+Enable Install MongoDB Compass
+Finish installation
+
+Check MongoDB:
+
+mongod --version
+STEP 2: Create Project
+
+Open Command Prompt:
+
 mkdir crud-api
 cd crud-api
+
+Initialize project:
+
 npm init -y
+
+Install packages:
+
 npm install express mongoose body-parser
+STEP 3: Create server.js
+
+Inside crud-api folder:
+
+notepad server.js
+
+
+
+
 
 STEP 3: CREATE FILE → server.js
 const express = require("express");
